@@ -1,11 +1,14 @@
 import "./index.css";
-import React, { forwardRef } from "react";
+import { FormEvent, forwardRef } from "react";
 
-const SearchBar = forwardRef<HTMLInputElement, { onSearch: (value: string) => void }>(({ onSearch }, ref) => {
+type Props = { onSearch: (value: string) => void }
 
-        const onValueChanged = (event: React.FormEvent<HTMLInputElement>) => {
+const SearchBar = forwardRef<HTMLInputElement, Props>(({ onSearch }, ref) => {
+
+        const onValueChanged = (event: FormEvent<HTMLInputElement>) => {
             onSearch(event.currentTarget.value);
         };
+
         return (
             <nav>
                 <div className={"search"}>

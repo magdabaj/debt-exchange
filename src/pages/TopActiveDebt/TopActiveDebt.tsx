@@ -1,6 +1,6 @@
 import { useTopActiveDebts } from "./hooks/useTopActiveDebts";
 import { WithLoadingAndError } from "../../components/WithLoadingAndError";
-import { DebtsList } from "../../components/DebtsList/DebtsList";
+import { DebtsList } from "../../components/DebtsList";
 import { Debt } from "../../types/Debt";
 import { SearchBar } from "../../components/SearchBar";
 import { useEffect, useRef, useState } from "react";
