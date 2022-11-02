@@ -2,7 +2,7 @@ import "./index.css";
 
 const Loader = () => {
     return (
-        <div className={"loader-container"}>
+        <div data-testid={"loader"} className={"loader-container"}>
             <div className={"loader"} />
         </div>
     );

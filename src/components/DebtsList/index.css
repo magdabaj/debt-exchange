@@ -35,6 +35,22 @@ tr {
   color: #003054;
   font-size: 12px;
 }
+@media only screen and (min-width: 2501px) {
+  .head {
+    font-size: 30px;
+  }
+  tr {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 960px) and (max-width: 2500px) {
+  .head {
+    font-size: 16px;
+  }
+  tr {
+    font-size: 20px;
+  }
+}
 @media only screen and (min-width: 360px) and (max-width: 959px) {
   .table-container {
     display: flex;

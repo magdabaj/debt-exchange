@@ -7,7 +7,9 @@ const TableRow = ({ data }: Props) => {
     return (
         <tr>
             {data.map((item, i) => (
-                <td key={i}>{item.toString()}</td>
+                <td data-testid={"cell"} key={i}>
+                    {item.toString()}
+                </td>
             ))}
         </tr>
     );

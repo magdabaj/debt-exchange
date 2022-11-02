@@ -7,6 +7,7 @@ type Props = {
 
 const TableHeadItem = ({ item, index, sortable, onSort }: Props) => (
     <td
+        data-testid={"column"}
         className={"head-item"}
         title={item}
         onClick={sortable ? () => onSort(index) : undefined}
