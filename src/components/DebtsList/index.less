@@ -1,0 +1,47 @@
+@import "src/index";
+
+table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: @margin-extra-large 0;
+}
+
+.head {
+  font-size: @margin-medium;
+  color: @grey;
+}
+
+.table-container th,
+.table-container td {
+  padding: 12px 15px;
+}
+
+.head-item {
+  padding: @margin;
+}
+
+tr {
+  font-weight: 500;
+  border-bottom: 1px solid @grey;
+  padding: @margin;
+  color: @dark-blue;
+  font-size: @margin-medium;
+}
+
+@media @phone {
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: baseline;
+  }
+}

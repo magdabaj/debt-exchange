@@ -1,11 +1,22 @@
+@desktop: ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@phone: ~"only screen and (min-width: 360px) and (max-width: 959px)";
+
 @margin-extra-small: @margin*0.25; //2px
 @margin-small: @margin*0.5; //4px
 @margin: 8px;
 @margin-medium: @margin*1.5; //12px
 @margin-large: @margin*2; //16px
+@margin-extra-large: @margin*3; //24px
+
+@red: #E40321;
+@dark-blue: #003054;
+@grey: #D3D3D3;
+
 
 body {
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 

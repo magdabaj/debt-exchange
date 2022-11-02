@@ -1,36 +1,37 @@
-import { useTopActiveDebts } from "./hooks/useTopActiveDebts";
 import { WithLoadingAndError } from "../../components/WithLoadingAndError";
 import { DebtsList } from "../../components/DebtsList";
 import { Debt } from "../../types/Debt";
 import { SearchBar } from "../../components/SearchBar";
-import { useEffect, useRef, useState } from "react";
+import { memo, useState } from "react";
+import { useFilteredDebts } from "./hooks/useFilteredDebts";
 
 const ListWithLoading = WithLoadingAndError<{ debts: Debt[] }>(DebtsList);
 
 const TopActiveDebt = () => {
-    const { isLoading, error, data } = useTopActiveDebts();
-    const [searchedValue, setSearchedValue] = useState("");
-    const searchValue = useRef<HTMLInputElement>(null);
+    const [filter, setFilter] = useState<string | undefined>(undefined);
 
-    console.log("data", data);
-    const listProps = {
-        debts: data
+    const { debts, isLoading, error } = useFilteredDebts(filter);
+
+    const setFilterValue = (value: string) => {
+        setFilter(value);
     };
-    console.log("search value", searchValue);
-    console.log("searched value", searchedValue);
 
-    useEffect(() => {
-        searchValue.current?.focus();
-    }, []);
+    const listProps = {
+        debts,
+    };
 
     return (
         <>
-            <SearchBar ref={searchValue} onSearch={setSearchedValue} />
-            <ListWithLoading isLoading={isLoading} error={error} {...listProps} />
+            <SearchBar onSearch={setFilterValue} />
+            <ListWithLoading
+                isLoading={isLoading}
+                error={error}
+                {...listProps}
+            />
         </>
-
     );
-
 };
 
-export { TopActiveDebt };
+const MemoedTopActiveDebt = memo(TopActiveDebt);
+
+export { MemoedTopActiveDebt as TopActiveDebt };

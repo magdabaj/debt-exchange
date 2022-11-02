@@ -1,17 +1,30 @@
+@import "src/index";
+
 nav {
-  background: #003054;
-  height: 85px;
+  background: @dark-blue;
+  height: 20vh;
   display: flex;
-  z-index: 12;
+  color: white;
+  padding-left: 2em;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: @margin-small;
+  padding-bottom: @margin-medium;
+  width: 100%;
+}
+
+.nav-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+
 }
 
 .search {
   display: flex;
-  align-items: center;
-  width: 60%;
-  gap: 0;
-  margin-left: 2em;
+  width: 50%;
 }
 
 .search-input {
@@ -20,10 +33,31 @@ nav {
 }
 
 .search-button {
-  background-color: #E40321;
+  background-color: @red;
   width: 33%;
   height: 38px;
-  border: #E40321;
-  color: white;
+  border: @red;
   font-weight: bold;
+  color: white;
+}
+
+@media @phone {
+  nav {
+    align-items: center;
+    padding: @margin;
+    height: auto;
+  }
+
+  .search {
+    width: 100%;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 80%
+  }
+
+  .search-button {
+    width: 20%
+  }
 }
