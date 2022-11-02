@@ -27,6 +27,10 @@ table {
 }
 .head-item {
   padding: 8px;
+  cursor: pointer;
+}
+.head-item:last-of-type {
+  cursor: auto;
 }
 tr {
   font-weight: 500;
